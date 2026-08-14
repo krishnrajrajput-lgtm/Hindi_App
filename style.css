@@ -7,7 +7,7 @@ body { font-family: Arial, sans-serif; background: #f4f7f6; display: flex; flex-
 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
 /* मेनू और क्लोज बटन */
-.menu-icon { position: absolute; top: 15px; left: 15px; font-size: 28px; background: none; border: none; cursor: pointer; }
+.menu-icon { position: absolute; top: 15px; left: 15px; font-size: 32px; background: none; border: none; cursor: pointer; color: #2c3e50; }
 .close-icon { float: right; font-size: 24px; background: none; border: none; color: #dc3545; cursor: pointer; margin-top: -5px; }
 
 /* स्लाइडिंग साइडबार */
@@ -21,8 +21,6 @@ body { font-family: Arial, sans-serif; background: #f4f7f6; display: flex; flex-
 
 /* मुख्य स्क्रीन की डिज़ाइन */
 .header { text-align: center; margin-bottom: 30px; }
-
-/* यहाँ हमने 'Kalam' कैलीग्राफी फॉन्ट लगाया है */
 .header h1 { 
     font-family: 'Kalam', cursive; 
     color: #2c3e50; 
@@ -30,7 +28,6 @@ body { font-family: Arial, sans-serif; background: #f4f7f6; display: flex; flex-
     font-size: 34px; 
     letter-spacing: 1px;
 }
-
 .header p { color: #7f8c8d; font-size: 16px; margin-top: 0; }
 
 .class-container { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 100%; max-width: 400px; }
