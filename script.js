@@ -9,14 +9,11 @@ document.getElementById('close-btn').onclick = function() {
 
 // 2. बटन क्लिक करने पर लिंक खोलने, वाइब्रेशन और लोडिंग का लॉजिक
 function openLink(linkName) {
-    // वाइब्रेशन चालू करें
     if (navigator.vibrate) navigator.vibrate(50);
     
-    // लोडिंग स्क्रीन दिखाएं
     const loader = document.getElementById('loading-overlay');
     loader.style.display = 'flex';
 
-    // आपके सभी गूगल ड्राइव के लिंक्स
     const appLinks = {
         "Class_5": "https://drive.google.com/drive/folders/1DmtcNe_xlpFesbXewq1KD-urxWF0SiHS?usp=sharing",
         "Class_6": "https://drive.google.com/drive/folders/1WkvH95aRlex2elOA0GJDIkso5tg98QiG?usp=sharing",
@@ -25,7 +22,10 @@ function openLink(linkName) {
         "Class_9": "https://drive.google.com/drive/folders/1PoJyv_vQ-jrLuLNWB9hmeCnMTpZS8mop?usp=sharing",
         "Class_10": "https://drive.google.com/drive/folders/1XGTBxka2gpL_AUsDg04E9yj6a4h55VFu?usp=sharing",
         "Competition": "https://drive.google.com/drive/folders/1CqkafKQMITpNJpIED2bLE8ULHrZO32XU?usp=sharing",
-        "Timetable": "https://drive.google.com/drive/folders/1-YvVkaDvlD6UXUojgZz1FDfH2Gk3_N3m?usp=sharing"
+        "Timetable": "https://drive.google.com/drive/folders/1-YvVkaDvlD6UXUojgZz1FDfH2Gk3_N3m?usp=sharing",
+        
+        // 🚨 यहाँ अपना नया APK डाउनलोड करने का लिंक पेस्ट करें 🚨
+        "UpdateApp": "यहाँ_अपना_APK_का_लिंक_डालें" 
     };
     
     setTimeout(() => {
@@ -59,13 +59,19 @@ async function loadNotices() {
                 } else {
                     const noticeElement = document.getElementById('notice-' + classNum);
                     if(noticeElement && noticeText !== "") {
-                        // साइडबार में नोटिस दिखाएँ
+                        // 1. साइडबार में नोटिस टेक्स्ट सेट करें
                         noticeElement.innerText = noticeText;
                         
-                        // अगर कोई नोटिस है, तो उस क्लास का बटन चमकाएँ (Glow)
+                        // 2. होम स्क्रीन के बटन को चमकाएँ
                         const classBtn = document.getElementById('btn-' + classNum);
                         if(classBtn) {
                             classBtn.classList.add('glow-btn');
+                        }
+
+                        // 3. साइडबार के लाल कार्ड को चमकाएँ
+                        const noticeCard = document.getElementById('notice-card-' + classNum);
+                        if(noticeCard) {
+                            noticeCard.classList.add('glow-card');
                         }
                     }
                 }
@@ -76,5 +82,4 @@ async function loadNotices() {
     }
 }
 
-// ऐप खुलते ही नोटिस चेक करें
 loadNotices();
