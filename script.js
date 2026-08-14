@@ -24,8 +24,8 @@ function openLink(linkName) {
         "Competition": "https://drive.google.com/drive/folders/1CqkafKQMITpNJpIED2bLE8ULHrZO32XU?usp=sharing",
         "Timetable": "https://drive.google.com/drive/folders/1-YvVkaDvlD6UXUojgZz1FDfH2Gk3_N3m?usp=sharing",
         
-        // 🚨 यहाँ अपना नया APK डाउनलोड करने का लिंक पेस्ट करें 🚨
-        "UpdateApp": "यहाँ_अपना_APK_का_लिंक_डालें" 
+        // 🚨 आपका नया APK डाउनलोड करने का ड्राइव लिंक यहाँ सेट कर दिया गया है 🚨
+        "UpdateApp": "https://drive.google.com/drive/folders/1PjhCQNqHgsELRouPiTIeIueoZoBARpRm?usp=sharing" 
     };
     
     setTimeout(() => {
