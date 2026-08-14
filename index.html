@@ -15,8 +15,8 @@
         <p style="color: #007bff; font-weight: bold; font-size: 18px;">खुल रहा है...</p>
     </div>
 
-    <!-- मेनू बटन (☰📢) -->
-    <button id="menu-btn" class="menu-icon">☰📢</button>
+    <!-- मेनू बटन (☰) -->
+    <button id="menu-btn" class="menu-icon">☰</button>
 
     <!-- लेफ्ट साइडबार (पॉप-अप विंडो) -->
     <div id="sidebar" class="sidebar">
@@ -49,15 +49,38 @@
         </div>
     </div>
 
-    <!-- मुख्य स्क्रीन -->
+    <!-- मुख्य स्क्रीन और स्टाइलिश SK लोगो -->
     <div class="header">
-        <!-- यह टाइटल अब कैलीग्राफी में दिखेगा -->
+        <svg width="150" height="160" viewBox="0 0 150 160" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 5px; filter: drop-shadow(0px 6px 10px rgba(0,0,0,0.1));">
+            <defs>
+                <linearGradient id="gradOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FF512F" />
+                    <stop offset="100%" stop-color="#F09819" />
+                </linearGradient>
+                <linearGradient id="gradBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#1A2980" />
+                    <stop offset="100%" stop-color="#26D0CE" />
+                </linearGradient>
+            </defs>
+
+            <circle cx="60" cy="55" r="45" fill="url(#gradBlue)" opacity="0.9" />
+            <circle cx="90" cy="75" r="40" fill="url(#gradOrange)" opacity="0.9" />
+
+            <text x="55" y="70" font-family="'Arial Black', sans-serif" font-size="45" font-weight="900" fill="#ffffff" text-anchor="middle">S</text>
+            <text x="95" y="90" font-family="'Arial Black', sans-serif" font-size="45" font-weight="900" fill="#ffffff" text-anchor="middle">K</text>
+
+            <text x="75" y="145" font-family="'Kalam', cursive" font-size="34" font-weight="bold" fill="#2c3e50" text-anchor="middle">हिन्दी</text>
+            
+            <circle cx="75" cy="155" r="3" fill="#FF512F" />
+        </svg>
+
+        <!-- आपका पुराना टाइटल -->
         <h1>📚 हिन्दी पठन सामग्री संग्रह</h1>
         <p>महाराष्ट्र स्टेट बोर्ड - हिंदी नोट्स</p>
     </div>
 
     <div class="class-container">
-        <!-- क्लास के बटन -->
+        <!-- क्लास के बटन (Glow फीचर के लिए ID के साथ) -->
         <button id="btn-5" class="class-btn" onclick="openLink('Class_5')">कक्षा 5</button>
         <button id="btn-6" class="class-btn" onclick="openLink('Class_6')">कक्षा 6</button>
         <button id="btn-7" class="class-btn" onclick="openLink('Class_7')">कक्षा 7</button>
