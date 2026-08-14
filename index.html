@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>हिन्दी पठन सामग्री संग्रह</title>
+    <!-- यहाँ हमने गूगल का कैलीग्राफी (Kalam) फॉन्ट जोड़ा है -->
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- लोडिंग स्क्रीन -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="spinner"></div>
+        <p style="color: #007bff; font-weight: bold; font-size: 18px;">खुल रहा है...</p>
+    </div>
+
+    <!-- मेनू बटन (📢) -->
+    <button id="menu-btn" class="menu-icon">सूचना📢</button>
+
+    <!-- लेफ्ट साइडबार (पॉप-अप विंडो) -->
+    <div id="sidebar" class="sidebar">
+        <button id="close-btn" class="close-icon">✖</button>
+        <h2 style="color: #2c3e50; border-bottom: 2px solid #007bff; padding-bottom: 10px;">📢 क्लास नोटिस</h2>
+        
+        <div class="notice-card">
+            <div class="class-title">कक्षा 5</div>
+            <div class="class-msg" id="notice-5">कोई नया नोटिस नहीं है।</div>
+        </div>
+        <div class="notice-card">
+            <div class="class-title">कक्षा 6</div>
+            <div class="class-msg" id="notice-6">कोई नया नोटिस नहीं है।</div>
+        </div>
+        <div class="notice-card">
+            <div class="class-title">कक्षा 7</div>
+            <div class="class-msg" id="notice-7">कोई नया नोटिस नहीं है।</div>
+        </div>
+        <div class="notice-card">
+            <div class="class-title">कक्षा 8</div>
+            <div class="class-msg" id="notice-8">कोई नया नोटिस नहीं है।</div>
+        </div>
+        <div class="notice-card">
+            <div class="class-title">कक्षा 9</div>
+            <div class="class-msg" id="notice-9">कोई नया नोटिस नहीं है।</div>
+        </div>
+        <div class="notice-card">
+            <div class="class-title">कक्षा 10</div>
+            <div class="class-msg" id="notice-10">कोई नया नोटिस नहीं है।</div>
+        </div>
+    </div>
+
+    <!-- मुख्य स्क्रीन -->
+    <div class="header">
+        <!-- यह टाइटल अब कैलीग्राफी में दिखेगा -->
+        <h1>📚 हिन्दी पठन सामग्री संग्रह</h1>
+        <p>महाराष्ट्र स्टेट बोर्ड - हिंदी नोट्स</p>
+    </div>
+
+    <div class="class-container">
+        <!-- क्लास के बटन -->
+        <button id="btn-5" class="class-btn" onclick="openLink('Class_5')">कक्षा 5</button>
+        <button id="btn-6" class="class-btn" onclick="openLink('Class_6')">कक्षा 6</button>
+        <button id="btn-7" class="class-btn" onclick="openLink('Class_7')">कक्षा 7</button>
+        <button id="btn-8" class="class-btn" onclick="openLink('Class_8')">कक्षा 8</button>
+        <button id="btn-9" class="class-btn" onclick="openLink('Class_9')">कक्षा 9</button>
+        <button id="btn-10" class="class-btn" onclick="openLink('Class_10')">कक्षा 10</button>
+
+        <!-- विशेष बटन -->
+        <button class="special-btn" onclick="openLink('Competition')">🏆 प्रतियोगिता सूचना</button>
+        <button class="special-btn" onclick="openLink('Timetable')">📅 परीक्षा समय सारणी</button>
+    </div>
+
+    <!-- बाहर आइकॉन और अंदर स्लाइडिंग नोटिस -->
+    <div class="notice-wrapper">
+        <div class="notice-icon-left">📢</div>
+        <div class="scrolling-notice-container">
+            <div class="scrolling-text" id="general-notice">
+                ⭐ यहाँ आपकी सामान्य सूचना दिखाई देगी... ⭐
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
