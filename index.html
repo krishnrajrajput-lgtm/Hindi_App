@@ -9,6 +9,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- 1. नया स्पलैश स्क्रीन (Splash Screen) -->
+    <div id="splash-screen">
+        <svg width="120" height="130" viewBox="0 0 150 160" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0px 6px 10px rgba(0,0,0,0.15));">
+            <defs>
+                <linearGradient id="gradOrangeSplash" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FF512F" />
+                    <stop offset="100%" stop-color="#F09819" />
+                </linearGradient>
+                <linearGradient id="gradBlueSplash" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#1A2980" />
+                    <stop offset="100%" stop-color="#26D0CE" />
+                </linearGradient>
+            </defs>
+            <circle cx="60" cy="55" r="45" fill="url(#gradBlueSplash)" opacity="0.9" />
+            <circle cx="90" cy="75" r="40" fill="url(#gradOrangeSplash)" opacity="0.9" />
+            <text x="55" y="70" font-family="'Arial Black', sans-serif" font-size="45" font-weight="900" fill="#ffffff" text-anchor="middle">S</text>
+            <text x="95" y="90" font-family="'Arial Black', sans-serif" font-size="45" font-weight="900" fill="#ffffff" text-anchor="middle">K</text>
+            <text x="75" y="145" font-family="'Kalam', cursive" font-size="34" font-weight="bold" fill="#2c3e50" text-anchor="middle">हिन्दी</text>
+            <circle cx="75" cy="155" r="3" fill="#FF512F" />
+        </svg>
+    </div>
+
     <!-- लोडिंग स्क्रीन -->
     <div id="loading-overlay" class="loading-overlay">
         <div class="spinner"></div>
@@ -23,47 +45,29 @@
         <button id="close-btn" class="close-icon">✖</button>
         <h2 style="color: #2c3e50; border-bottom: 2px solid #007bff; padding-bottom: 10px;">📢 क्लास नोटिस</h2>
         
-        <div class="notice-card" id="notice-card-5">
-            <div class="class-title">कक्षा 5</div>
-            <div class="class-msg" id="notice-5">कोई नया नोटिस नहीं है।</div>
-        </div>
-        <div class="notice-card" id="notice-card-6">
-            <div class="class-title">कक्षा 6</div>
-            <div class="class-msg" id="notice-6">कोई नया नोटिस नहीं है।</div>
-        </div>
-        <div class="notice-card" id="notice-card-7">
-            <div class="class-title">कक्षा 7</div>
-            <div class="class-msg" id="notice-7">कोई नया नोटिस नहीं है।</div>
-        </div>
-        <div class="notice-card" id="notice-card-8">
-            <div class="class-title">कक्षा 8</div>
-            <div class="class-msg" id="notice-8">कोई नया नोटिस नहीं है।</div>
-        </div>
-        <div class="notice-card" id="notice-card-9">
-            <div class="class-title">कक्षा 9</div>
-            <div class="class-msg" id="notice-9">कोई नया नोटिस नहीं है।</div>
-        </div>
-        <div class="notice-card" id="notice-card-10">
-            <div class="class-title">कक्षा 10</div>
-            <div class="class-msg" id="notice-10">कोई नया नोटिस नहीं है।</div>
-        </div>
+        <div class="notice-card" id="notice-card-5"><div class="class-title">कक्षा 5</div><div class="class-msg" id="notice-5">कोई नया नोटिस नहीं है।</div></div>
+        <div class="notice-card" id="notice-card-6"><div class="class-title">कक्षा 6</div><div class="class-msg" id="notice-6">कोई नया नोटिस नहीं है।</div></div>
+        <div class="notice-card" id="notice-card-7"><div class="class-title">कक्षा 7</div><div class="class-msg" id="notice-7">कोई नया नोटिस नहीं है।</div></div>
+        <div class="notice-card" id="notice-card-8"><div class="class-title">कक्षा 8</div><div class="class-msg" id="notice-8">कोई नया नोटिस नहीं है।</div></div>
+        <div class="notice-card" id="notice-card-9"><div class="class-title">कक्षा 9</div><div class="class-msg" id="notice-9">कोई नया नोटिस नहीं है।</div></div>
+        <div class="notice-card" id="notice-card-10"><div class="class-title">कक्षा 10</div><div class="class-msg" id="notice-10">कोई नया नोटिस नहीं है।</div></div>
     </div>
 
-    <!-- मुख्य स्क्रीन और स्टाइलिश SK लोगो -->
+    <!-- मुख्य स्क्रीन और स्टाइलिश SK लोगो (इसमें कलर का कोड जोड़ दिया गया है) -->
     <div class="header">
         <svg width="85" height="95" viewBox="0 0 150 160" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 5px; filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.1));">
             <defs>
-                <linearGradient id="gradOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+                <linearGradient id="gradOrangeMain" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stop-color="#FF512F" />
                     <stop offset="100%" stop-color="#F09819" />
                 </linearGradient>
-                <linearGradient id="gradBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+                <linearGradient id="gradBlueMain" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stop-color="#1A2980" />
                     <stop offset="100%" stop-color="#26D0CE" />
                 </linearGradient>
             </defs>
-            <circle cx="60" cy="55" r="45" fill="url(#gradBlue)" opacity="0.9" />
-            <circle cx="90" cy="75" r="40" fill="url(#gradOrange)" opacity="0.9" />
+            <circle cx="60" cy="55" r="45" fill="url(#gradBlueMain)" opacity="0.9" />
+            <circle cx="90" cy="75" r="40" fill="url(#gradOrangeMain)" opacity="0.9" />
             <text x="55" y="70" font-family="'Arial Black', sans-serif" font-size="45" font-weight="900" fill="#ffffff" text-anchor="middle">S</text>
             <text x="95" y="90" font-family="'Arial Black', sans-serif" font-size="45" font-weight="900" fill="#ffffff" text-anchor="middle">K</text>
             <text x="75" y="145" font-family="'Kalam', cursive" font-size="34" font-weight="bold" fill="#2c3e50" text-anchor="middle">हिन्दी</text>
@@ -75,7 +79,6 @@
     </div>
 
     <div class="class-container">
-        <!-- क्लास के बटन -->
         <button id="btn-5" class="class-btn" onclick="openLink('Class_5')">कक्षा 5</button>
         <button id="btn-6" class="class-btn" onclick="openLink('Class_6')">कक्षा 6</button>
         <button id="btn-7" class="class-btn" onclick="openLink('Class_7')">कक्षा 7</button>
@@ -83,20 +86,20 @@
         <button id="btn-9" class="class-btn" onclick="openLink('Class_9')">कक्षा 9</button>
         <button id="btn-10" class="class-btn" onclick="openLink('Class_10')">कक्षा 10</button>
 
-        <!-- विशेष बटन -->
         <button class="special-btn" onclick="openLink('Competition')">🏆 प्रतियोगिता सूचना</button>
         <button class="special-btn" onclick="openLink('Timetable')">📅 परीक्षा समय सारणी</button>
     </div>
 
-    <!-- नया ऐप डाउनलोड / अपडेट बटन (यहाँ वापस जोड़ दिया गया है) -->
-    <button class="update-app-btn" onclick="openLink('UpdateApp')">🔄 नया ऐप डाउनलोड करें</button>
+    <!-- अपडेट ऐप बटन -->
+    <button id="btn-update" class="update-app-btn" onclick="openLink('UpdateApp')">🔄 नया ऐप डाउनलोड करें</button>
 
     <!-- स्क्रीन के नीचे फिक्स रहने वाली पट्टी -->
     <div class="fixed-notice-bar">
         <div class="notice-icon-fixed">📢</div>
         <div class="scrolling-notice-container">
-            <div class="scrolling-text" id="general-notice">
-                ⭐ यहाँ आपकी सामान्य सूचना दिखाई देगी... ⭐
+            <div class="scrolling-wrapper" id="marquee-wrapper">
+                <div class="marquee-item">⭐ यहाँ आपकी सामान्य सूचना दिखाई देगी... ⭐</div>
+                <div class="marquee-item">⭐ यहाँ आपकी सामान्य सूचना दिखाई देगी... ⭐</div>
             </div>
         </div>
     </div>
