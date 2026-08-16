@@ -1,12 +1,12 @@
 * { box-sizing: border-box; }
 body { font-family: Arial, sans-serif; background: #f4f7f6; display: flex; flex-direction: column; align-items: center; padding: 15px 10px 90px 10px; margin: 0; overflow-x: hidden; }
 
-/* 1. स्पलैश स्क्रीन (Splash Screen) का डिज़ाइन */
+/* स्पलैश स्क्रीन */
 #splash-screen {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background-color: #ffffff; z-index: 10000;
     display: flex; justify-content: center; align-items: center;
-    transition: opacity 0.8s ease-out; /* स्लो फेड-आउट इफ़ेक्ट */
+    transition: opacity 0.8s ease-out; 
 }
 
 /* लोडिंग और मेनू */
@@ -36,30 +36,19 @@ body { font-family: Arial, sans-serif; background: #f4f7f6; display: flex; flex-
 .special-btn { padding: 15px 10px; font-size: 15px; font-weight: bold; border: none; border-radius: 12px; background: #28a745; color: white; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: background 0.3s; }
 .special-btn:active { background: #218838; transform: scale(0.96); }
 
-/* अपडेट बटन */
 .update-app-btn { margin-top: 25px; padding: 12px 25px; font-size: 16px; font-weight: bold; border: none; border-radius: 25px; background: #28a745; color: white; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, background 0.3s; width: fit-content; }
 .update-app-btn:active { background: #218838; transform: scale(0.96); }
 
-/* 2. बिना रुके चलने वाली पट्टी का डिज़ाइन (Seamless Loop) */
+/* फिक्स पट्टी (बिना रुके चलने वाली) */
 .fixed-notice-bar { position: fixed; bottom: 0; left: 0; width: 100%; background-color: #fff3cd; display: flex; align-items: center; border-top: 1px solid #ffeeba; z-index: 900; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); }
 .notice-icon-fixed { font-size: 22px; padding: 10px 15px; background: #ffffff; border-right: 1px solid #ffeeba; z-index: 2; }
 .scrolling-notice-container { flex-grow: 1; overflow: hidden; position: relative; height: 100%; display: flex; align-items: center; }
+.scrolling-wrapper { display: flex; width: max-content; }
+.start-marquee { animation: scroll-left 14s linear infinite; }
+.marquee-item { padding-right: 80px; color: #856404; font-weight: bold; font-size: 16px; white-space: nowrap; }
+@keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-.scrolling-wrapper {
-    display: flex;
-    width: max-content;
-    animation: scroll-left 12s linear infinite; /* स्पीड सेट की गई है */
-}
-.marquee-item {
-    padding-right: 50px; /* दोनों लाइनों के बीच गैप */
-    color: #856404; font-weight: bold; font-size: 16px; white-space: nowrap;
-}
-@keyframes scroll-left { 
-    0% { transform: translateX(0); } 
-    100% { transform: translateX(-50%); } /* यह लाइन लूप को बिना गैप के रिपीट कराती है */
-}
-
-/* बटन और कार्ड का धड़कने (Blink) का एनीमेशन */
+/* धड़कने (Blink) का एनीमेशन */
 .glow-btn { background: #ff5722 !important; animation: glowing 1.5s infinite; }
 @keyframes glowing { 0% { box-shadow: 0 0 5px #ff5722; transform: scale(1); } 50% { box-shadow: 0 0 20px #ff5722; transform: scale(1.05); } 100% { box-shadow: 0 0 5px #ff5722; transform: scale(1); } }
 
