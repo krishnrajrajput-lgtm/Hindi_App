@@ -89,7 +89,7 @@ async function loadNotices() {
                 }
                 // क्लास, प्रतियोगिता (Competition), और टाइमटेबल (Timetable)
                 else {
-                    // अगर यह क्लास 5 से 10 है, तो साइडबार में भी नोटिस दिखाएँ
+                    // साइडबार का नोटिस (केवल क्लास 5 से 10 के लिए)
                     const noticeElement = document.getElementById('notice-' + classNum);
                     if(noticeElement && noticeText !== "") {
                         noticeElement.innerText = noticeText;
@@ -97,7 +97,7 @@ async function loadNotices() {
                         if(noticeCard) noticeCard.classList.add('glow-card');
                     }
 
-                    // होम स्क्रीन के बटन (Class, Competition, Timetable) को चमकाएँ
+                    // होम स्क्रीन के बटन चमकाना
                     const classBtn = document.getElementById('btn-' + idTarget);
                     if(classBtn && noticeText !== "" && noticeText.toLowerCase() !== "no") {
                         classBtn.classList.add('glow-btn');
