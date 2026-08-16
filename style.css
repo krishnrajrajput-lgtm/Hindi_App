@@ -41,7 +41,31 @@ body { font-family: Arial, sans-serif; background: #f4f7f6; display: flex; flex-
 
 /* फिक्स पट्टी (बिना रुके चलने वाली) */
 .fixed-notice-bar { position: fixed; bottom: 0; left: 0; width: 100%; background-color: #fff3cd; display: flex; align-items: center; border-top: 1px solid #ffeeba; z-index: 900; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); }
-.notice-icon-fixed { font-size: 22px; padding: 10px 15px; background: #ffffff; border-right: 1px solid #ffeeba; z-index: 2; }
+
+/* नया: आवाज़ निकालने (Sound) वाले आइकॉन का एनीमेशन */
+.notice-icon-fixed { 
+    font-size: 22px; 
+    padding: 10px 15px; 
+    background: #ffffff; 
+    border-right: 1px solid #ffeeba; 
+    z-index: 2; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: shout 1.5s ease-in-out infinite; 
+    transform-origin: center; 
+}
+
+/* मेगाफोन के हिलने (Shout) का असली एनीमेशन */
+@keyframes shout {
+    0% { transform: scale(1) rotate(0deg); }
+    15% { transform: scale(1.2) rotate(-15deg); }
+    30% { transform: scale(1.2) rotate(15deg); }
+    45% { transform: scale(1.2) rotate(-15deg); }
+    60% { transform: scale(1) rotate(0deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
 .scrolling-notice-container { flex-grow: 1; overflow: hidden; position: relative; height: 100%; display: flex; align-items: center; }
 .scrolling-wrapper { display: flex; width: max-content; }
 .start-marquee { animation: scroll-left 14s linear infinite; }
