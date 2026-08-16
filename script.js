@@ -1,14 +1,21 @@
-// 1. स्पलैश स्क्रीन (Splash Screen) का स्लो फेड-आउट लॉजिक
+// 1. स्पलैश स्क्रीन और पट्टी का 2 सेकंड का Delay लॉजिक
 window.onload = function() {
     setTimeout(function() {
         const splash = document.getElementById('splash-screen');
-        splash.style.opacity = '0'; // धीरे से गायब होना शुरू
+        splash.style.opacity = '0'; // लोगो गायब होना शुरू होगा
         
         setTimeout(function() {
-            splash.style.display = 'none'; // पूरी तरह से हटा देना
-        }, 800); // 0.8 सेकंड फेड-आउट का समय
+            splash.style.display = 'none'; // लोगो पूरी तरह हट जाएगा
+            
+            // ऐप का इंटरफेस आने के ठीक 2 सेकंड (2000ms) बाद नोटिफिकेशन चलना शुरू होगा
+            setTimeout(function() {
+                const marquee = document.getElementById('marquee-wrapper');
+                if(marquee) marquee.classList.add('start-marquee');
+            }, 2000); 
+            
+        }, 800); 
         
-    }, 2000); // 2 सेकंड तक स्क्रीन पर लोगो दिखेगा
+    }, 2000); 
 };
 
 
@@ -16,7 +23,6 @@ window.onload = function() {
 document.getElementById('menu-btn').onclick = function() {
     document.getElementById('sidebar').classList.add('open');
 };
-
 document.getElementById('close-btn').onclick = function() {
     document.getElementById('sidebar').classList.remove('open');
 };
@@ -49,7 +55,7 @@ function openLink(linkName) {
 }
 
 
-// 4. गूगल शीट से नोटिस और ऐप अपडेट बटन ब्लिंक कराने का लॉजिक
+// 4. गूगल शीट से नोटिस और बटनों को ब्लिंक कराने का लॉजिक
 const googleSheetCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRmhscV9iFZVPh7d66J08RquCXwhrd3c_wKw2eKX0Dl-BA5J8dOADrXxu4CMwWyUz1ZoO5LyBA33z4U/pub?output=csv"; 
 
 async function loadNotices() {
@@ -64,33 +70,37 @@ async function loadNotices() {
                 const classNum = row.substring(0, firstComma).trim(); 
                 const noticeText = row.substring(firstComma + 1).trim(); 
                 
-                // अगर सामान्य नोटिस (All) है
-                if (classNum.toLowerCase() === 'all') {
+                const idTarget = classNum.toLowerCase(); 
+
+                // सामान्य नोटिस
+                if (idTarget === 'all') {
                     const marqueeWrapper = document.getElementById('marquee-wrapper');
                     if(marqueeWrapper && noticeText !== "") {
                         const msg = "⭐ " + noticeText + " ⭐";
-                        // बिना गैप (Seamless) के चलाने के लिए हम मैसेज को 2 बार डाल रहे हैं
                         marqueeWrapper.innerHTML = `<div class="marquee-item">${msg}</div><div class="marquee-item">${msg}</div>`;
                     }
                 } 
-                // 4. नया: अगर ऐप अपडेट (Update) का मैसेज है
-                else if (classNum.toLowerCase() === 'update') {
+                // ऐप अपडेट बटन
+                else if (idTarget === 'update') {
                     const updateBtn = document.getElementById('btn-update');
                     if(updateBtn && noticeText.toLowerCase() === 'yes') {
-                        updateBtn.classList.add('glow-btn'); // बटन को लाल रंग में चमकाएँ
+                        updateBtn.classList.add('glow-btn'); 
                     }
                 }
-                // अगर किसी क्लास (Class) का नोटिस है
+                // क्लास, प्रतियोगिता (Competition), और टाइमटेबल (Timetable)
                 else {
+                    // अगर यह क्लास 5 से 10 है, तो साइडबार में भी नोटिस दिखाएँ
                     const noticeElement = document.getElementById('notice-' + classNum);
                     if(noticeElement && noticeText !== "") {
                         noticeElement.innerText = noticeText;
-                        
-                        const classBtn = document.getElementById('btn-' + classNum);
-                        if(classBtn) classBtn.classList.add('glow-btn');
-
                         const noticeCard = document.getElementById('notice-card-' + classNum);
                         if(noticeCard) noticeCard.classList.add('glow-card');
+                    }
+
+                    // होम स्क्रीन के बटन (Class, Competition, Timetable) को चमकाएँ
+                    const classBtn = document.getElementById('btn-' + idTarget);
+                    if(classBtn && noticeText !== "" && noticeText.toLowerCase() !== "no") {
+                        classBtn.classList.add('glow-btn');
                     }
                 }
             }
