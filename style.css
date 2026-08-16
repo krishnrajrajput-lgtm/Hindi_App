@@ -39,15 +39,16 @@ body { font-family: Arial, sans-serif; background: #f4f7f6; display: flex; flex-
 .update-app-btn { margin-top: 25px; padding: 12px 25px; font-size: 16px; font-weight: bold; border: none; border-radius: 25px; background: #28a745; color: white; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, background 0.3s; width: fit-content; }
 .update-app-btn:active { background: #218838; transform: scale(0.96); }
 
-/* फिक्स पट्टी (बिना रुके चलने वाली) */
+/* फिक्स पट्टी */
 .fixed-notice-bar { position: fixed; bottom: 0; left: 0; width: 100%; background-color: #fff3cd; display: flex; align-items: center; border-top: 1px solid #ffeeba; z-index: 900; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); }
 
-/* नया: आवाज़ निकालने (Sound) वाले आइकॉन का एनीमेशन */
+/* 📢 आइकॉन का नीला बैकग्राउंड और एनीमेशन */
 .notice-icon-fixed { 
     font-size: 22px; 
     padding: 10px 15px; 
-    background: #ffffff; 
-    border-right: 1px solid #ffeeba; 
+    background: #d1ecf1; 
+    border-right: 2px solid #17a2b8; 
+    border-radius: 0 8px 8px 0; 
     z-index: 2; 
     display: flex;
     align-items: center;
@@ -56,7 +57,7 @@ body { font-family: Arial, sans-serif; background: #f4f7f6; display: flex; flex-
     transform-origin: center; 
 }
 
-/* मेगाफोन के हिलने (Shout) का असली एनीमेशन */
+/* मेगाफोन का एनीमेशन */
 @keyframes shout {
     0% { transform: scale(1) rotate(0deg); }
     15% { transform: scale(1.2) rotate(-15deg); }
@@ -72,7 +73,7 @@ body { font-family: Arial, sans-serif; background: #f4f7f6; display: flex; flex-
 .marquee-item { padding-right: 80px; color: #856404; font-weight: bold; font-size: 16px; white-space: nowrap; }
 @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-/* धड़कने (Blink) का एनीमेशन */
+/* ब्लिंक एनीमेशन */
 .glow-btn { background: #ff5722 !important; animation: glowing 1.5s infinite; }
 @keyframes glowing { 0% { box-shadow: 0 0 5px #ff5722; transform: scale(1); } 50% { box-shadow: 0 0 20px #ff5722; transform: scale(1.05); } 100% { box-shadow: 0 0 5px #ff5722; transform: scale(1); } }
 
